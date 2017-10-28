@@ -1,5 +1,13 @@
-FROM microsoft/dotnet:latest
-COPY . /app
+FROM microsoft/aspnetcore:1.1
+
+# Set the Working Directory
 WORKDIR /app
-EXPOSE 5000/tcp
-ENTRYPOINT ["dotnet", "run"]
+
+# Copy the app
+COPY . /app
+
+# Tell .net core which port to expose
+ENV ASPNETCORE_URLS=http://*:80
+
+# Start the app
+ENTRYPOINT dotnet dotnetacilx.dll
