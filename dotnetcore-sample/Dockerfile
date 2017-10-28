@@ -1,4 +1,4 @@
-FROM microsoft/aspnetcore:1.1
+FROM microsoft/dotnet:latest
 
 # Set the Working Directory
 WORKDIR /app
